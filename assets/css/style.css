@@ -1,0 +1,1069 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background-color: black;
+}
+
+.burger {
+  position: relative;
+}
+.burger .menu-toggle {
+  display: none;
+}
+.burger .menu-icon {
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.burger .menu-icon i.fa-xmark {
+  display: none;
+}
+.burger .menu-toggle:checked + .menu-icon i.fa-bars {
+  display: none;
+}
+.burger .menu-toggle:checked + .menu-icon i.fa-xmark {
+  display: block;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1001;
+  color: white;
+  padding: 10px;
+}
+.burger .blocMenu {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 70%;
+  height: 100vh;
+  background-color: black;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  border-left: 4px solid orange;
+}
+.burger .blocMenu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8em;
+  text-align: center;
+}
+.burger .blocMenu ul li a {
+  text-decoration: none;
+  font-family: "Prompt", sans-serif;
+  color: white;
+}
+.burger .blocMenu ul li a:hover {
+  color: orange;
+}
+.burger .menu-toggle:checked ~ .blocMenu {
+  display: flex;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+header > a {
+  text-decoration: none;
+  width: 20%;
+  margin-left: 20px;
+}
+header > a img {
+  width: 100%;
+}
+header nav {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin-right: 20px;
+}
+header nav .headerConnect {
+  padding: 10px;
+  border-radius: 1.5em;
+  background-color: orange;
+}
+header nav .headerConnect a {
+  text-decoration: none;
+  color: black;
+  font-family: "Prompt", sans-serif;
+}
+header nav .burger {
+  font-size: 2em;
+  color: white;
+}
+header nav ul {
+  display: none;
+  gap: 2rem;
+}
+header nav ul li {
+  list-style: none;
+}
+header nav ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+.hero {
+  min-height: 100vh;
+  background-image: url("../images/quartier.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+.hero .intro {
+  max-width: 950px;
+  color: white;
+  animation: fadeIn 1.8s ease forwards;
+}
+.hero .intro h2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 1.2rem;
+  color: #ff9c00;
+}
+.hero .intro p {
+  font-family: "Prompt", sans-serif;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #e2e2e2;
+  margin-bottom: 2.2rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+.hero .intro .cta {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.hero .intro .cta a {
+  padding: 14px 38px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.05rem;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+.hero .intro .cta a.btn {
+  background: linear-gradient(90deg, #ff9c00, #ff6500);
+  color: black;
+  box-shadow: 0 4px 12px rgba(255, 165, 0, 0.4);
+}
+.hero .intro .cta a.btn:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(90deg, #ffa500, #ff7b00);
+}
+.hero .intro .cta a.btn-secondary {
+  border: 2px solid white;
+  color: white;
+}
+.hero .intro .cta a.btn-secondary:hover {
+  background: white;
+  color: black;
+  transform: translateY(-3px);
+}
+.hero .about {
+  margin-top: 4em;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 2em;
+  border-top: 2px solid orange;
+  border-bottom: 2px solid orange;
+  width: 90%;
+  max-width: 950px;
+}
+.hero .about h3 {
+  font-family: "Prompt", sans-serif;
+  color: #ff9c00;
+  font-size: 2rem;
+  margin-bottom: 1em;
+}
+.hero .about p {
+  color: #e2e2e2;
+  font-family: "Prompt", sans-serif;
+  line-height: 1.7;
+  margin-bottom: 1em;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.container {
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 4em;
+}
+.container .grid-carte {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5em;
+}
+.container .grid-carte h1 {
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-family: "Prompt", sans-serif;
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+.container .grid-carte article {
+  width: calc((100% - 1.5em) / 2);
+}
+.container .grid-carte article img {
+  width: 100%;
+  border-top-right-radius: 1.5em;
+  border-top-left-radius: 1.5em;
+  display: block;
+}
+.container .grid-carte article div {
+  background-color: white;
+  text-align: center;
+  padding: 20px;
+  border-bottom-left-radius: 1.5em;
+  border-bottom-right-radius: 1.5em;
+}
+.container .grid-carte article div h2 {
+  font-family: "Prompt", sans-serif;
+  color: black;
+}
+.container .grid-carte article div p {
+  height: 4em;
+  padding: 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.container .grid-carte article div a {
+  color: black;
+  font-family: "Prompt", sans-serif;
+  padding: 10px;
+}
+
+.signup-page {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+.signup-page img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  grid-column: 1;
+  grid-row: 2;
+}
+.signup-page form {
+  background-color: white;
+  width: 100%;
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 2em;
+  gap: 0.7em;
+}
+.signup-page form h2 {
+  text-align: center;
+  margin-bottom: 2em;
+}
+.signup-page form label .bob {
+  color: red;
+}
+.signup-page form input {
+  padding: 10px;
+  border: 0;
+}
+.signup-page form .buttonEmail {
+  text-align: center;
+  padding: 20px;
+  background-color: orange;
+  color: black;
+  border: 0;
+  border-radius: 0.8em;
+}
+.signup-page form .signin {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: smaller;
+  gap: 0.7em;
+}
+.signup-page form .signin a {
+  color: black;
+}
+
+.backWhite {
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.backWhite .sectMenu {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1em;
+  margin-bottom: 2em;
+}
+.backWhite .sectMenu h2 {
+  width: 100%;
+  margin-top: 2em;
+}
+.backWhite .sectMenu article {
+  width: calc((100% - 1em) / 2);
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #FFFCFC;
+  border-radius: 0.5em;
+}
+.backWhite .sectMenu article a {
+  text-decoration: none;
+  color: black;
+}
+.backWhite .sectMenu article a img {
+  width: 100%;
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
+}
+.backWhite .sectMenu article a div {
+  padding: 12px;
+}
+.backWhite .sectMenu article a div h4 {
+  margin-bottom: 8px;
+}
+.backWhite .sectResto {
+  margin-bottom: 2em;
+}
+.backWhite .sectResto h2 {
+  margin-bottom: 0.5em;
+}
+.backWhite .sectResto h3 {
+  margin-bottom: 0.2em;
+}
+.backWhite .sectPanier {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.backWhite .sectPanier a {
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+  background-color: orange;
+  border-radius: 0.5em;
+}
+
+.bgExept {
+  background: -webkit-linear-gradient(90deg, #e5e1e1);
+}
+.bgExept .backWhite {
+  background-color: white;
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+}
+.bgExept .backWhite h1 {
+  font-family: "Montserrat", sans-serif;
+  color: #ff9c00;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+.bgExept .backWhite .panier-items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+.bgExept .backWhite .panier-items .panier-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border: solid 2px orange;
+}
+.bgExept .backWhite .panier-items .panier-item img {
+  width: 100px;
+  height: auto;
+  border-radius: 10px;
+}
+.bgExept .backWhite .panier-items .panier-item .item-info {
+  flex: 1;
+  margin-left: 15px;
+  text-align: left;
+}
+.bgExept .backWhite .panier-items .panier-item .item-info h2 {
+  color: #ff6500;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+.bgExept .backWhite .panier-items .panier-item .item-info p {
+  margin: 5px 0;
+  color: orange;
+}
+.bgExept .backWhite .panier-items .panier-item .item-info p input {
+  width: 50px;
+  padding: 4px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+}
+.bgExept .backWhite .panier-items .panier-item .supprimer {
+  background-color: #ff3b00;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.bgExept .backWhite .panier-items .panier-item .supprimer:hover {
+  background-color: #ff6500;
+}
+.bgExept .panier-total {
+  background-color: #fff3e0;
+  padding: 20px;
+  border-radius: 10px;
+}
+.bgExept .panier-total h2 {
+  color: #ff9c00;
+  margin-bottom: 15px;
+}
+.bgExept .panier-total .commander {
+  background-color: #ff9c00;
+  color: black;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.bgExept .panier-total .commander:hover {
+  background-color: #ffb300;
+}
+
+.container-a-propos {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 4em;
+}
+@keyframes scaleUpHorizontal {
+  0% {
+    transform: scaleX(0.4);
+    transform-origin: 0% 0%;
+  }
+  100% {
+    transform: scaleX(1);
+    transform-origin: 0% 0%;
+  }
+}
+.container-a-propos .histoire {
+  gap: 1em;
+}
+.container-a-propos .histoire h2 {
+  color: black;
+  font-family: "Prompt", sans-serif;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  text-align: center;
+  padding: 1rem 0;
+  background: orange;
+  animation: scaleUpHorizontal 1.5s ease 0s 1 normal forwards;
+}
+.container-a-propos .histoire p {
+  font-size: 18px;
+  color: white;
+}
+.container-a-propos .histoire p .gras {
+  color: orange;
+}
+.container-a-propos .galerie {
+  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+.container-a-propos .galerie .img1 {
+  width: 100%;
+  border-radius: 2rem;
+  box-shadow: 6px 9px 15px 0px #677A9E;
+}
+.container-a-propos .galerie .img1:hover {
+  background-color: rgb(165, 165, 165);
+  transition: background-color 1s ease 0s;
+}
+.container-a-propos .galerie .flex-article .img2,
+.container-a-propos .galerie .flex-article .img3 {
+  width: 100%;
+  border-radius: 2rem;
+  box-shadow: 6px 9px 15px 0px #677A9E;
+}
+.container-a-propos .mission {
+  gap: 1em;
+}
+.container-a-propos .mission h2 {
+  font-family: "Prompt", sans-serif;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  padding: 1rem 0;
+  text-align: center;
+  color: black;
+  background: orange;
+  animation: scaleUpHorizontal 1.5s ease 0s 1 normal forwards;
+}
+.container-a-propos .mission img {
+  width: 100%;
+  border-radius: 2rem;
+  box-shadow: 6px 9px 15px 0px #677A9E;
+}
+.container-a-propos .mission .objectif {
+  gap: 1em;
+  color: white;
+}
+.container-a-propos .mission .objectif p {
+  font-size: 18px;
+  margin-top: 1em;
+}
+.container-a-propos .mission .objectif p .gras {
+  color: orange;
+}
+
+.container-contact .contain {
+  margin-top: 2%;
+  border-radius: 30px;
+  padding: 20px;
+  background-color: black;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2%;
+}
+.container-contact .contain h1 {
+  color: orange;
+  margin-bottom: 20px;
+  font-family: "Prompt", sans-serif;
+}
+.container-contact .contain img {
+  width: 100%;
+  border-radius: 2rem;
+  box-shadow: 6px 9px 15px 0px #677A9E;
+}
+.container-contact .contain p {
+  width: 100%;
+  font-size: 20px;
+  color: white;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.container-contact .contain .form-group {
+  margin-bottom: 15px;
+  color: orange;
+  margin-top: 25px;
+}
+.container-contact .contain label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 20px;
+  font-weight: 300;
+}
+.container-contact .contain input,
+.container-contact .contain textarea {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
+.container-contact .contain input:focus,
+.container-contact .contain textarea:focus {
+  border: 2px solid red;
+  outline: none;
+}
+.container-contact .contain input:hover,
+.container-contact .contain textarea:hover {
+  border-color: #ff4d4d;
+}
+.container-contact .contain button {
+  background-color: orange;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.container-contact .contain button a {
+  text-decoration: none;
+  color: black;
+}
+.container-contact .contain button:hover {
+  background-color: #45a049;
+}
+
+.error {
+  color: black;
+  margin: 1em;
+  font-style: italic;
+}
+.error div:first-of-type {
+  border-bottom: solid 1px black;
+  padding-bottom: 20px;
+}
+.error div:last-of-type {
+  margin-top: 2em;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.error div:last-of-type img {
+  width: 100%;
+  height: auto;
+}
+
+footer .blocFooter {
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 2em;
+  padding-top: 2em;
+}
+footer .blocFooter .footerInfo {
+  width: 80%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  flex-wrap: wrap;
+}
+footer .blocFooter .footerInfo div {
+  margin-bottom: 2em;
+}
+footer .blocFooter .footerInfo h3 {
+  margin-bottom: 1em;
+  font-family: "Prompt", sans-serif;
+  color: orange;
+}
+footer .blocFooter .footerInfo ul li {
+  list-style: none;
+  margin-bottom: 0.5em;
+}
+footer .blocFooter .footerInfo ul li a {
+  color: white;
+  text-decoration: none;
+}
+footer .blocFooter .footerInfo .fExplorer {
+  width: calc((100% - 1em) / 2);
+}
+footer .blocFooter .footerInfo .fInfo {
+  width: calc((100% - 1em) / 2);
+}
+footer .blocFooter .footerInfo .fContact {
+  width: calc((100% - 1em) / 2);
+}
+footer .blocFooter .footerInfo .fFollow {
+  width: calc((100% - 1em) / 2);
+}
+footer .blocFooter .footerInfo .fFollow ul {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+footer .blocFooter .footerMap {
+  width: 80%;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+footer .blocFooter .footerMap iframe {
+  width: 100%;
+  height: 100%;
+}
+footer .copyright {
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: small;
+}
+footer .footerEnd {
+  background-color: orange;
+  color: white;
+  padding: 20px;
+  font-size: small;
+  text-align: center;
+}
+
+@media screen and (min-width: 480px) and (max-width: 960px) {
+  header nav {
+    margin-right: 50px;
+  }
+  .burger .blocMenu {
+    width: 40%;
+    height: 40vh;
+    border-left: 4px solid orange;
+    border-bottom: 4px solid orange;
+  }
+  .burger .blocMenu ul {
+    gap: 0.5em;
+  }
+  .burger .blocMenu ul li {
+    font-size: 0.7em;
+  }
+  .container .grid-carte article {
+    width: calc((100% - 3em) / 3);
+  }
+  .container .grid-carte article div h2 {
+    font-size: 2em;
+  }
+  .container .grid-carte article div p {
+    font-size: 1.5em;
+  }
+  .container .grid-carte article div a {
+    font-size: 1.5em;
+  }
+  .signup-page {
+    display: flex;
+  }
+  .signup-page img {
+    width: 40%;
+    height: auto;
+  }
+  .signup-page article {
+    width: 60%;
+  }
+  .signup-page article form {
+    width: 100%;
+    height: 100%;
+  }
+  .signup-page article form h2 {
+    text-align: center;
+    margin-bottom: 2em;
+  }
+  .signup-page article form label .bob {
+    color: red;
+  }
+  .signup-page article form input {
+    padding: 10px;
+    border: 0;
+  }
+  .signup-page article form .buttonEmail {
+    text-align: center;
+    padding: 20px;
+    background-color: orange;
+    color: black;
+    border: 0;
+    border-radius: 0.8em;
+  }
+  .signup-page article form .signin {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: smaller;
+    gap: 0.7em;
+  }
+  .signup-page article form .signin a {
+    color: black;
+  }
+  .container-a-propos {
+    padding: 3px;
+    width: 95%;
+    margin-left: 1.5%;
+    margin-right: 2.5%;
+    padding: 20px;
+  }
+  .container-a-propos .histoire h2 {
+    margin-left: 5em;
+    margin-right: 5em;
+  }
+  .container-a-propos .galerie {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    object-fit: cover;
+  }
+  .container-a-propos .galerie .burger1 {
+    width: 68%;
+    display: flex;
+    flex-direction: column;
+  }
+  .container-a-propos .galerie .burger1 img {
+    width: 100%;
+  }
+  .container-a-propos .galerie .flex-article {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    width: 32%;
+    justify-content: space-between;
+  }
+  .container-a-propos .galerie .flex-article article {
+    display: flex;
+    gap: 1em;
+  }
+  .container-a-propos .galerie .flex-article img {
+    gap: 1em;
+    width: 100%;
+  }
+  .container-a-propos .mission {
+    gap: 1em;
+  }
+  .container-a-propos .mission h2 {
+    margin-right: 5em;
+    margin-left: 5em;
+  }
+  .error div:last-of-type {
+    margin-top: 4em;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .error div:last-of-type img {
+    width: 100%;
+    height: auto;
+  }
+}
+@media screen and (min-width: 960px) {
+  header > a {
+    width: 10%;
+  }
+  header nav {
+    margin-right: 2em;
+  }
+  header nav .burger {
+    font-size: 2em;
+  }
+  .burger .blocMenu {
+    width: 30%;
+    height: 60vh;
+    border-left: 4px solid orange;
+    border-bottom: 4px solid orange;
+  }
+  .burger .blocMenu ul {
+    gap: 0.5em;
+  }
+  .burger .blocMenu ul li {
+    font-size: 0.7em;
+  }
+  .container .grid-carte article {
+    width: calc((100% - 4.5em) / 4);
+  }
+  .container .grid-carte article div h2 {
+    font-size: 1em;
+  }
+  .container .grid-carte article div p {
+    font-size: 1em;
+  }
+  .container .grid-carte article div a {
+    font-size: 1em;
+  }
+  .signup-page {
+    display: flex;
+  }
+  .signup-page img {
+    width: 70%;
+    height: 30em;
+    object-fit: cover;
+  }
+  .signup-page article {
+    width: 30%;
+  }
+  .signup-page article form {
+    width: 100%;
+    height: 100%;
+  }
+  .signup-page article form h2 {
+    text-align: center;
+    margin-bottom: 2em;
+  }
+  .signup-page article form label .bob {
+    color: red;
+  }
+  .signup-page article form input {
+    padding: 10px;
+    border: 0;
+  }
+  .signup-page article form .buttonEmail {
+    text-align: center;
+    padding: 20px;
+    background-color: orange;
+    color: black;
+    border: 0;
+    border-radius: 0.8em;
+  }
+  .signup-page article form .signin {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: smaller;
+    gap: 0.7em;
+  }
+  .signup-page article form .signin a {
+    color: black;
+  }
+  .container-a-propos {
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+  }
+  .container-a-propos .histoire h2 {
+    margin-left: 5em;
+    margin-right: 5em;
+    font-size: 30px;
+  }
+  .container-a-propos .histoire article p {
+    font-size: 20px;
+  }
+  .container-a-propos .galerie {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+    justify-content: space-between;
+    object-fit: cover;
+  }
+  .container-a-propos .galerie .burger1 {
+    width: 35%;
+    display: flex;
+    flex-direction: row;
+  }
+  .container-a-propos .galerie .burger1 img {
+    width: 100%;
+  }
+  .container-a-propos .galerie .flex-article {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+    width: 70%;
+  }
+  .container-a-propos .mission {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .container-a-propos .mission h2 {
+    margin-left: 5em;
+    margin-right: 5em;
+    font-size: 30px;
+    width: 100%;
+  }
+  .container-a-propos .mission img {
+    width: 35%;
+  }
+  .container-a-propos .mission .objectif {
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+    justify-content: center;
+  }
+  .container-a-propos .mission .objectif p {
+    font-size: 20px;
+    width: 100%;
+  }
+  .backWhite .sectMenu article {
+    width: calc((100% - 2em) / 3);
+  }
+  .container-contact .contain {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1em;
+    align-items: flex-start;
+  }
+  .container-contact .contain h1 {
+    width: 100%;
+  }
+  .container-contact .contain img {
+    margin-top: 1.5em;
+    width: 35%;
+  }
+  .container-contact .contain .contact {
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+    justify-content: space-between;
+  }
+  .error div:last-of-type {
+    margin-top: 6em;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .error div:last-of-type img {
+    width: 100%;
+    height: auto;
+  }
+  footer .blocFooter .footerInfo h3 {
+    font-size: 1em;
+  }
+  footer .blocFooter .footerInfo ul li a {
+    font-size: 1em;
+  }
+  footer .blocFooter .footerInfo ul li a:hover {
+    color: orange;
+  }
+  footer .blocFooter .footerInfo .fExplorer {
+    width: calc((100% - 3em) / 4);
+  }
+  footer .blocFooter .footerInfo .fInfo {
+    width: calc((100% - 3em) / 4);
+  }
+  footer .blocFooter .footerInfo .fContact {
+    width: calc((100% - 3em) / 4);
+  }
+  footer .blocFooter .footerInfo .fFollow {
+    width: calc((100% - 3em) / 4);
+  }
+  footer .copyright {
+    font-size: small;
+  }
+  footer .footerEnd {
+    font-size: small;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
