@@ -1,15 +1,14 @@
-# B1-Projet-site-restaurant-sass
-Site vitrine de restaurant développé en Mobile First. Utilisation de SASS, respect des standards W3C, accessibilité.
 
-## Site Restaurant
-Site vitrine responsive réalisé pour un restaurant de burger dans le cadre de ma formation à la 3W Academy.
+
+## Projet : Site Vitrine Restaurant
+Site vitrine responsive réalisé dans le cadre de ma formation à la 3W Academy.
 
 ### Aperçu
 - Lien du site : https://princilia-tsague1226.github.io/B1-Projet-site-restaurant-sass/
-- Ojectif : Créer une interface moderne et fluide en utilisant SASS.
+- Ojectif : Créer une interface moderne et fluide (Mobile First) en utilisant SASS.
 
 ### Technologies utilisées
-. Frontend : HTML, CSS, SASS
+- Frontend : HTML, CSS, SASS
 
 ### Fonctionnalités clés
 - Mobile First : Entièrement optimisé pour smartphones, tablettes et ordinateurs.
